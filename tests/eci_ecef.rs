@@ -18,5 +18,5 @@ fn test_eci_to_ecef_and_back_vector() {
     // Convert back from ECI to ECEF and back
     let eci_coords_back = ecef::to_eci(gst, eci::to_ecef(gst, eci_coords));
 
-    assert_relative_eq!(eci_coords, eci_coords_back, epsilon = 1e-99999);
+    assert_relative_eq!(eci_coords, eci_coords_back, epsilon = 1e-9999);
 }
