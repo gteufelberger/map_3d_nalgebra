@@ -22,7 +22,7 @@ mod tests {
         // Set up random number gen
         let mut rng = rand::rng();
 
-        // Get GST and ECEF coordinates
+        // Get GST and ECI coordinates
         let gst: f64 = rng.random();
         let x = rng.random();
         let y = rng.random();
