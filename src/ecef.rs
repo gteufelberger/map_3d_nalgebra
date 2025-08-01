@@ -38,4 +38,24 @@ mod tests {
         // Compare
         assert_eq!(result, result_map_3d);
     }
+
+    /// Test matrices as input for `to_eci` function
+    #[test]
+    fn test_to_eci_matrix() {
+        let gst = 1.0;
+        let ecef = Matrix3::new(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0);
+        let expected_result = Matrix3::new(
+            0.5403023058681398,
+            -0.8414709848078965,
+            0.0,
+            0.8414709848078965,
+            0.5403023058681398,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+        );
+        let result = to_eci(gst, ecef);
+        assert_eq!(result, expected_result);
+    }
 }
