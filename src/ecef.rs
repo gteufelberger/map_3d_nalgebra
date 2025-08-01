@@ -1,12 +1,12 @@
 use nalgebra::{Matrix3, Rotation3, Vector3};
 
 /// Convert ECEF coordinates to ECI
-pub fn to_eci<T>(gst: f64, eci: T) -> T
+pub fn to_eci<T>(gst: f64, ecef: T) -> T
 where
     Matrix3<f64>: std::ops::Mul<T, Output = T>,
 {
     let rotation = Rotation3::from_axis_angle(&Vector3::z_axis(), gst);
-    *rotation.matrix() * eci
+    *rotation.matrix() * ecef
 }
 
 #[cfg(test)]
