@@ -63,6 +63,7 @@ checksum = "b0fc1b6107fbd06c96e5e481fcf3e6575b873eb84f5b68f1f5706cde0fed42c4"
 name = "map_3d_nalgebra"
 version = "0.1.0"
 dependencies = [
+ "approx",
  "map_3d",
  "nalgebra",
  "rand",
